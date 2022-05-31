@@ -8,28 +8,34 @@ const long double CTOK = 273.15l;
 
 long double celsius, kelvin, fahrenheit;
 
-const char usage[] =
-  "Usage: tempconvert scale value\n"
-  "\n"
-  "scale: The temperature scale the value is provided in:\n"
-  "  f, F - Fahrenheit\n"
-  "  c, C - Celsius\n"
-  "  k, K - Kelvin\n"
-  "  r, R - Rankine (under development)\n"
-  "\n"
-  "value: The numeric value.\n";
-
+const char *usage =
+    "Usage: tempconvert scale value\n"
+    "\n"
+    "scale: The temperature scale the value is provided in:\n"
+    "  f, F - Fahrenheit\n"
+    "  c, C - Celsius\n"
+    "  k, K - Kelvin\n"
+    "  r, R - Rankine (under development)\n"
+    "  h    - Print this help\n"
+    "  i    - Print version and compilation info\n"
+    "\n"
+    "value: The numeric value.\n";
 
 int main(int argc, char **argv) {
-  if(argc<2) {
+  if (argc < 2) {
     fprintf(stderr, "Bad argument count.\n");
     printf("%s", usage);
     return 1;
   }
 
-  if(argv[1][0]=='h') {
+  if (argv[1][0] == 'h') {
     printf("%s", usage);
     return 0;
+  }
+  if (argv[1][0] == 'i') {
+    printf(
+        "tempconvert v1.5, compiled %s %s\n"
+        "A simple temperature converter\n");
   }
 
   if (argc != 3) {
