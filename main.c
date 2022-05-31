@@ -62,7 +62,7 @@ int main(int argc, char **argv) {
       break;
     default:
       fprintf(stderr, "Unrecognized temperature scale %c\n", argv[1][0]);
-      printf("%s", value);
+      printf("%s", usage);
       return 1;
   }
   printf("K: %.15Lf\nC: %.15Lf\nF: %.15Lf\n", kelvin, celsius, fahrenheit);
