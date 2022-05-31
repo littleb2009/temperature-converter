@@ -21,6 +21,12 @@ const char usage[] =
 
 
 int main(int argc, char **argv) {
+  if(argc<2) {
+    fprintf(stderr, "Bad argument count.\n");
+    printf("%s", usage);
+    return 1;
+  }
+
   if(argv[1][0]=='h') {
     printf("%s", usage);
     return 0;
