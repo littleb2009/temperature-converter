@@ -34,8 +34,10 @@ int main(int argc, char **argv) {
   }
   if (argv[1][0] == 'i') {
     printf(
-        "tempconvert v1.5, compiled %s %s\n"
-        "A simple temperature converter\n");
+      "tempconvert v1.5, compiled %s %s\n"
+      "A simple temperature converter\n",
+      __DATE__, __TIME__
+    );
   }
 
   if (argc != 3) {
